@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
-import { fetchEntries } from '@utils/contentfulPosts'
-import Post from '@components/Post'
+import { fetchEntries } from '../util/contentfulPosts'
+import Post from '../components/Post'
 
 const Home = ({posts}) => (
   <div>
