@@ -5,7 +5,7 @@ import Post from '@components/Post'
 
 const Home = () => (
   <div>
-    <h1>Hello world</h1>
+    <h1>Halla world</h1>
 
     <h3>Hooray 🎉 - you've built this with <a href="https://nextjs.org">Next.js</a>!</h3>
     <div className="posts">
