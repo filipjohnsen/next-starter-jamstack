@@ -1,12 +1,18 @@
 import React from 'react'
 import Head from 'next/head'
+import { fetchEntries } from '@utils/contentfulPosts'
+import Post from '@components/Post'
 
 const Home = () => (
   <div>
     <h1>Hello world</h1>
 
     <h3>Hooray 🎉 - you've built this with <a href="https://nextjs.org">Next.js</a>!</h3>
-
+    <div className="posts">
+      {posts.map((p) => {
+        return <Post key={p.date} date={p.date} image={p.image.fields} title={p.title} />
+      })}
+    </div>
     <style jsx>{`
       :global(html,body) {
         margin: 0;
@@ -41,5 +47,19 @@ const Home = () => (
     `}</style>
   </div>
 )
+
+
+export async function getStaticProps() {
+  const res = await fetchEntries()
+  const posts = await res.map((p) => {
+    return p.fields
+  })
+
+  return {
+    props: {
+      posts,
+    },
+  }
+}
 
 export default Home
