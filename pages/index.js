@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { fetchEntries } from '@utils/contentfulPosts'
 import Post from '@components/Post'
 
-const Home = () => (
+const Home = ({posts}) => (
   <div>
     <h1>Halla world</h1>
 
